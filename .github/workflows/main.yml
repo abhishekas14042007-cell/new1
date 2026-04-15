@@ -1,0 +1,13 @@
+name: Secret + Env
+
+on: push
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    env:
+      ENV_NAME: staging
+
+    steps:
+      - name: Use both
+        run: echo "Env=$ENV_NAME Secret=${{ secrets.API_KEY }}"
